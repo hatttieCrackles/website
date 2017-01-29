@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hattie</title>
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+  <meta charset="utf-8">
+  <link href="css/main.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Permanent+Marker" rel="stylesheet"> 
+  <script src="js/L2-html.js"></script>
+  <script src="js/index.js"></script>
+  <script src="https://platform.twitter.com/widgets.js"></script>
+</head>
+<body>
+<div id="cont">
+  
+  <img class="center" id="title_image" src="images/Graffiti_Hattie_2_crop.png">
+  
+  <div id="svg_wrap" class="center">
+    <svg width="970" height="500"xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink">     
+      <g id="about" class="main_btn">
+        <circle cx="110" cy="110" r="110" fill="#e01191"/>
+        <image x="62" y="18" width="95" height="141" xlink:href="images/question_mark.png"></image>
+        <text x="110" y="185" text-anchor="middle" stroke="#000" fill="#000" font-size="17px">About</text>
+      </g>
+      <g id="choosing" class="main_btn">
+        <circle cx="360" cy="110" r="110" fill="#0d9010"/>
+        <image x="280" y="40" width="160" height="118" xlink:href="images/brown-spider-md.png"></image>
+        <text x="360" y="185" text-anchor="middle" stroke="#000" fill="#000" font-size="17px">Choosing Stories</text>
+      </g>
+      <g id="tv_film" class="main_btn">
+        <circle cx="610" cy="110" r="110" fill="#dad622"/>
+        <image x="545" y="10" width="130" height="149" xlink:href="images/darth.png"></image>
+        <text x="610" y="185" text-anchor="middle" stroke="#000" fill="#000" font-size="17px">What to Watch</text>
+      </g>
+      <g id="photos" class="main_btn">
+        <circle cx="860" cy="110" r="110" fill="#721ade"/>
+          <image x="810" y="10" width="118" height="150" xlink:href="images/princess_crop.png"></image>
+        <text x="860" y="185" text-anchor="middle" stroke="#000" fill="#000" font-size="17px">Photos</text>
+      </g>
+      <g id="jokes" class="main_btn">
+        <circle cx="235" cy="330" r="110" fill="#a40f2a"/>
+         <image x="167" y="240" width="140" height="138" xlink:href="images/laugh.png">Jokes</image>
+        <text x="235" y="405" text-anchor="middle" stroke="#000" fill="#000" font-size="17px">Jokes</text>
+      </g>
+      <g id="youtube" class="main_btn">
+        <circle cx="485" cy="330" r="110" fill="#2ce0d7"/>
+        <image x="401" y="235" width="170" height="170" xlink:href="images/youtube.png"></image>
+        <text x="485" y="405" text-anchor="middle" stroke="#000" fill="#000" font-size="17px">YouTube</text>
+      </g>
+      <g id="twitter" class="main_btn">
+        <circle cx="735" cy="330" r="110" fill="#d75802"/>
+        <image x="664" y="255" width="142" height="115" xlink:href="images/twitter_bird.png"></image>
+        <text x="735" y="405" text-anchor="middle" stroke="#000" fill="#000" font-size="17px">Tweet my page!</text>
+      </g>
+    </svg>
+  <div>
+  
+  <div id="mask"><div>
+  <div id="panel">
+    <img id="close" src="images/close_small.png">
+        
+    <div id="about_panel" class="sub_panel">
+      <img id="about_photo" src="images/hattie_darth_crop.png">
+      <p>Hello! I am Hattie.  I am 6 years old and when I grow up, I am going to be famous.</p>
+      <p>I am bigger than this now, but this is my favourite photo.
+      <p>Welcome to my website. I hope you enjoy my choosing book, reviews and other stuff.</p>
+      <p>TTFN,</p>
+      <p>Hattie.</p>
+    </div>
+    
+    <div id="choosing_panel" class="sub_panel">
+      <p>In my choosing stories, you decide what to do.  I have only written one, but am busy planning my next one.</p>
+      <img class="choosing_icon" data-link="choosing/do_you_dare/index.html" src="choosing/do_you_dare/images/icon.png">
+    </div>
+    
+    <div id="photos_panel" class="sub_panel">
+      <div id="photo_btn" class="btn">Change</div>
+      <div id="photo_wrap">
+      </div>
+    </div>
+
+    <div id="jokes_panel" class="sub_panel">
+      <div id="new_joke_btn" class="btn">New Joke</div>
+      <div id="joke_text"></div>
+      <div id="punchline_btn" class="btn">Boom!</div>
+      <div id="punchline_text"></div>
+    </div>
+    
+    <div id="tv_film_panel" class="sub_panel">
+      <p>My favorite films and programs. Scores out of 10</p>
+      <table id="reviews">
+        <tr>
+          <td class="score ten">10</td>
+          <td class="film_name">Star Wars</td>
+          <td class="summary">Films</td>
+        </tr>
+        <tr>  
+          <td class="score ten">10</td>
+          <td class="film_name">Indiana Jones</td>
+          <td class="summary">Films</td>
+        </tr>
+        <tr>  
+          <td class="score ten">10</td>
+          <td class="film_name">Harry Potter</td>
+          <td class="summary">Films</td>
+        </tr>
+        <tr>  
+          <td class="score ten">10</td>
+          <td class="film_name">Zathura: A Space Adventure</td>
+          <td class="summary">Film</td>
+        </tr>
+        <tr>
+          <td class="score nine">9</td>
+          <td class="film_name">Just Add Magic</td>
+          <td class="summary">Program (Amazon)</td>
+        </tr>
+        <tr>
+          <td class="score nine">9</td>
+          <td class="film_name">Transformers Prime</td>
+          <td class="summary">Program (Netflix)</td>
+        </tr>
+        <tr>
+          <td class="score nine">9</td>
+          <td class="film_name">Night at the Museum</td>
+          <td class="summary">Films</td>
+        </tr>
+        <tr>
+          <td class="score nine">9</td>
+          <td class="film_name">Jumanji</td>
+          <td class="summary">Film</td>
+        </tr>
+        <tr>
+          <td class="score eight">8</td>
+          <td class="film_name">Dangermouse</td>
+          <td class="summary">Program (Netflix, BBC)</td>
+        </tr>
+        <tr>
+          <td class="score eight">8</td>
+          <td class="film_name">Back to the Future</td>
+          <td class="summary">Films</td>
+        </tr>
+        <tr>
+          <td class="score eight">8</td>
+          <td class="film_name">The Many Adventures of Winnie the Pooh</td>
+          <td class="summary">Film</td>
+        </tr>
+        <tr>
+          <td class="score seven">7</td>
+          <td class="film_name">The Good Dinosaur</td>
+          <td class="summary">Film</td>
+        </tr>
+      </table>
+    </div>
+    
+  </div>
+   
+</div>
+</body>
+</html>

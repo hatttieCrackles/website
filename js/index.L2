@@ -1,0 +1,80 @@
+[f] -> f.onLoad
+  
+  show = {qry -> qry.elm.setStyle 'display' 'block'}
+  hide = {qry -> qry.elm.setStyle 'display' 'none'}
+  [showPanel] id
+    '#panel'.elm.setStyle 'min-width' '450px'
+    '#mask,#panel,#' + (id + '_panel') $show
+  hidePanel = {id -> '#mask,#panel,.sub_panel' $hide}
+  
+  //close
+  '#close,#mask'.elm.on 'click' hidePanel
+  
+  //main buttons
+  [f] evt -> '#choosing,#about,#tv_film,#photos,#jokes'.elm.on 'click' f
+    evt.me.attr 'id' $showPanel
+    
+  //panel
+  [f] evt -> '#panel'.elm.on 'click' f
+    evt.stop 'propagation' 
+
+  //photos
+  photoMax = 7
+  photoInd = 1.rand photoMax
+  [newPhoto]
+    '#panel'.elm.setStyle 'min-width' '200px'
+    '#photo_wrap'.elm.setProp 'innerHTML' '<img id="photo">'
+    [f] evt -> '#photo'.elm.on 'load' f  //portrait/landscape
+      me = evt.me
+      ratio = me.style 'width'.replace 'px' ''/ (me.style 'height'.replace 'px' '')
+      if ratio > 1
+        me.setStyle 'width' '520px' 'height' (1/ratio * 520.round + 'px')
+        '#photo_wrap'.elm.setStyle 'width' '530px' 'height' (1/ratio * 530.round + 'px')
+      else
+        me.setStyle 'height' '520px' 'width' (ratio * 520.round + 'px')
+        '#photo_wrap'.elm.setStyle 'height' '530px' 'width' (ratio * 530.round + 'px')
+      me.setStyle 'visibility' 'visible'
+    '#photo'.elm.setAttr 'src' ('images/photos/' + photoInd + '.jpg')
+    set photoInd = &a + 1 % (photoMax + 1)
+  '#photos,#photo_btn'.elm.on 'click' newPhoto
+  
+  //jokes
+  Joke = 0,2.new
+  Joke`('Why is 6 afraid of 7?',, ...
+    'Because 7 8 9!')
+  Joke`('What do you call a man with a seagull on his head?',, ...
+    'Cliff.')
+  Joke`('What did the zero say to the eight?',, ...
+    'Nice belt.')  
+  Joke`('Knock Knock<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Who\'s there?<br><br>' + ...
+      'Boo<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspBoo Who?',, ...
+    'No need to cry!')
+  jokeInd = 1.rand (Joke.n-1)
+  [newJoke]
+    set jokeInd = &a + 1 % (Joke.n)
+    '#punchline_text'.elm ...
+      .setStyle 'visibility' 'hidden' ...
+      .setProp 'innerHTML' (Joke\jokeInd 1)
+    '#joke_text'.elm.setProp 'innerHTML' (Joke\jokeInd 0)
+  '#jokes,#new_joke_btn'.elm.on 'click' newJoke
+  [f] -> '#punchline_btn'.elm.on 'click' f
+    '#punchline_text'.elm.setStyle 'visibility' 'visible'
+    
+  //links: youtube, tweet, choosing icon
+  ~
+  **
+  var L2_link = function(s) { window.open(s, '_blank') };
+  **
+  '#youtube'.elm.on 'click' ...
+    {-> 'https://www.youtube.com/channel/UCcvpT7viHj3ACQaf64-YzXA' $link}
+  '#twitter'.elm.on 'click' ...
+    {-> 'https://twitter.com/intent/tweet?text=Hattie%27s%20wonderful%20website%21%20https%3A%2F%2Fhatttiecrackles.github.io%2Fwebsite%2F' $link}
+  '.choosing_icon'.elm.on 'click' {evt -> evt.me.attr 'data-link'.sca $link}
+
+
+    
+
+    
+    
+    
+    

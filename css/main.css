@@ -1,0 +1,174 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: #1e81fd;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+#cont {
+  width: 970px;
+  margin: 0 auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.center {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+#title_image { 
+  width: 737px;
+  height: 325px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+#svg_wrap {
+  width: 970px;
+  height: 220px; 
+}
+.button {
+  fill: #ccc; 
+}
+g {
+  cursor: pointer;
+}
+g:hover > circle {
+  fill: #fff;
+}
+g:active > circle {
+  fill: #eee;
+}
+#mask {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  background-color: rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+#panel {
+  position: fixed;  
+  display: none;
+  background-color: #fff;
+  z-index: 2;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  overflow: auto;
+  border-radius: 10px;
+  cursor: default;
+  max-height: 95%;
+}
+#close {
+  cursor: pointer;
+  display: block;
+  float: right;
+  width: 56px;
+  padding: 5px 5px 10px 10px;
+}
+.sub_panel {
+  display: none;
+  cursor: default;
+  padding: 10px 20px 20px; 
+}
+#photos_panel {
+  padding: 10px 10px 2px; 
+}
+#about_photo {
+  width: 300px;
+  float: left;
+  padding: 10px 20px 20px 0;
+}
+#photo {
+  display: block;
+  padding-top: 15px;
+  margin: 0px auto;
+  visibility: hidden;
+}
+#photo_wrap {
+  margin: 0px auto;
+}
+#photo_btn {
+  margin: 0px auto;
+}
+.btn {
+  cursor: pointer;
+  width: 160px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #2ea1fd;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #1e91ed; 
+}
+.btn:active {
+  background-color: #1e81dd; 
+}
+#joke_text,#punchline_text {
+  padding: 30px 50px 30px 100px;
+  font-size: 20px;
+}
+#punchline_text {
+  font-weight: 900;
+}
+#reviews td {
+  padding: 3px 10px; 
+}
+.film_name {
+  font-weight: 900;
+  max-width: 250px;
+}
+.score {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+}
+.summary {
+  max-width: 250px; 
+}
+.ten { color: #0d0; }
+.nine { color: #0b0; }
+.eight { color: #090; }
+.seven { color: #070; }
+
+.choosing_icon {
+  display: block;
+  cursor: pointer;
+  width: 350px;
+  height: 175px;
+  padding 20px;
+  margin: 30px auto;
+  border: 3px solid #000;
+  border-radius: 10px;
+  background-color:  #1bca4f;
+}
+.choosing_icon:hover {
+  background-color:  #1bea4f;
+}
+.choosing_icon:active {
+  background-color:  #1bfa4f;
+}
+  
+  
+
+

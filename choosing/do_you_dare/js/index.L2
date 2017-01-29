@@ -1,0 +1,69 @@
+[f] -> f.onLoad
+  
+  [f] data -> 'configAll.json'.ajaxGet f
+
+    //#center div must always have same height as window 
+    **
+    var $center = document.getElementById('center');
+    $center.style.height = window.innerHeight + 'px';
+    window.onresize = function() {
+      $center.style.height = window.innerHeight + 'px';
+    };
+    **  
+
+    //load page
+    Data = data.fromJSON
+    data = ~
+    paperElm = '#paper'.elm
+    chooseElm = '#choose'.elm
+    History = ::
+    [loadPage] name
+      Page = Data@pages.e name [.]
+      paperElm.setProp 'innerHTML' (Page@text)
+      Choices = Page@links[.]
+      if Choices.n > 0
+        Intros = Choices.map {X -> X@intro}.unbox
+        Links  = Choices.map {X -> X@page }.unbox
+        chooseElm.setProp 'innerHTML' ( '<div data-link="' + Links + ...
+          '" class="choice choice_' + (Choices.n) + '">' + Intros + '</div>'.join '')
+      else //terminal page
+        chooseElm.setProp 'innerHTML' ( ...
+          '<div id="restart" data-link="start" class="choice">Return to start.</div>' )
+      if History.n > 0
+        chooseElm.prepend ('<div id="back" class="choice" data-link="' + ...
+          (History.r (1-)) + '" title="Back">&#8592;</div>')
+      choices = '.choice'.elm
+      choices.setStyle 'height' (choices.style 'height'.replace 'px' ''.max + 'px')
+      [f] evt -> '.choice'.elm.on 'click' f
+        id = evt.me.attr 'id'
+        if id == 'back'
+          History.r (2,1-) 'cut'
+        elif id == 'restart'
+          set History = ::
+        evt.me.attr 'data-link' $loadPage
+      History`name
+    'start' $loadPage
+    
+  //preload images so hopefully available before reqd  
+  ~
+  **  
+  function preloadImages(array) {
+    if (!preloadImages.list) preloadImages.list = [];
+    var list = preloadImages.list;
+    for (var i=0; i<array.length; i++) {
+      var img = new Image();
+      img.onload = function() {
+        var index = list.indexOf(this);
+        if (index !== -1) list.splice(index, 1);
+      }
+      list.push(img);
+      img.src = array['/images/' + i];
+    }
+  }
+  preloadImages(['front_page.png','leaves_right.png','toucan.png',
+    'door.png','key.png','littleSpider.png','spider.png','redLight.png',
+    'yellowLight.png','triangles.png','ghost.png','poo.png','bolt.png']);
+  **  
+    
+
+

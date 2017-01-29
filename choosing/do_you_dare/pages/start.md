@@ -1,0 +1,1 @@
+<img src="images/front_page.png" class="center_80 shift_up">

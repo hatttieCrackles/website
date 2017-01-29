@@ -1,0 +1,3 @@
+You look at the light very carefully. There are some words coming out of it ...
+
+> ***Find the Key of Glee.***

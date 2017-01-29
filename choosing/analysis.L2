@@ -1,0 +1,47 @@
+scope
+  
+  //page transition matrix for config.json in path
+  //  -uses current direc if path falsy
+  //  -does not check validity of config.json
+  [trans] path 
+    Data = path .or (.wd) + '/' + 'config.json'.read.fromJSON
+    Pages = Data@pages[.]
+    PageNames = Pages.key
+    T = Pages.n,(Pages.n).zero.key: PageNames .keyC: PageNames
+    each p PageNames
+      Pages.e p
+      From = Pages.e p[.]
+      if From.n > 0  //not a terminal page
+        T.rc p (From.map{X -> X@page}.unbox): 1
+    out T.title: 'Page Transitions' .label: 'From' .labelC: 'To' 
+  
+  //compiles config file, path + file should be a config file,
+  //  -uses current direc if path falsy
+  //  -assumes page text in path+'pages' direc
+  //  -parses .md page files to HTML and adds to json object
+  //  -checks valid config file:
+  //    -list checks here
+  //  -saves to same path, but with file name: configAll.json 
+  [compile] path
+    path = path .or (.wd) + '/'
+    Data = path + 'config.json'.read.fromJSON
+    PageNames = Data@pages[.].key
+    **  
+    var converter = new (require('../Hattie/website/choosing/node_modules/showdown')).Converter();
+    **
+    each p PageNames
+      text = path + 'pages/' + p + '.md'.read
+      **
+      L2_text = converter.makeHtml(L2_text);
+      **
+      &[Data@pages.e p]: ('text' << text 'links' (&0))
+    Data.toJSON.write (path + 'configAll.json')
+  
+  'choosing/do_you_dare' $compile
+  
+  
+  
+  
+  
+  
+    

@@ -1,0 +1,145 @@
+{
+  "tagline": "",
+  "description": "",
+  "title": { 
+    "name": "",
+    "font": "",
+    "size": "",
+    "color": ""
+  },
+  "style": {
+    "color": "",
+    "font": "",
+    "size": ""
+  },
+  "author": {
+    "name": "",
+    "font": "",
+    "size": "",
+    "color": ""
+  },
+  "pages": {
+    "start": [
+      { 
+        "page": "amazon",
+        "intro": "Start book."
+      }
+    ],
+    "amazon": [ 
+      { 
+        "page": "home",
+        "intro": "I am too scared, I am going home."
+      },
+      { 
+        "page": "find_door",
+        "intro": "I am very brave, let's have an adventure!"
+      }
+    ],
+    "home": [],
+    "find_door": [
+      { 
+        "page": "leaves",
+        "intro": "Search through the leaves and twigs on the ground."
+      },
+      { 
+        "page": "barge",
+        "intro": "Run at the door and try to bust it open!"
+      }
+    ],
+    "barge": [],
+    "leaves": [
+      { 
+        "page": "spiders",
+        "intro": "Go through the door."
+      }
+    ],
+    "spiders": [
+      { 
+        "page": "big_spider",
+        "intro": "I hope you are ready!"
+      }
+    ],
+    "big_spider": [
+      { 
+        "page": "door_a",
+        "intro": "First door."
+      },
+      { 
+        "page": "door_b",
+        "intro": "Second door."
+      },
+      { 
+        "page": "door_c",
+        "intro": "Third door."
+      }
+    ],
+    "door_a": [],
+    "door_b": [
+      { 
+        "page": "ghost",
+        "intro": "Stop and investigate the red light."
+      },
+      { 
+        "page": "keep_running_1",
+        "intro": "Keep running."
+      }
+    ],
+    "door_c": [],
+    "ghost": [
+      { 
+        "page": "ghost_end",
+        "intro": "I hope you are scared!"
+      }
+    ],
+    "ghost_end": [],
+    "keep_running_1": [
+      { 
+        "page": "yellow_light",
+        "intro": "Stop and investigate the yellow light."
+      },
+      { 
+        "page": "keep_running_2",
+        "intro": "Keep running from the spider."
+      }
+    ],
+    "yellow_light": [
+      { 
+        "page": "triangles",
+        "intro": "Search for the Key of Glee."
+      }
+    ],
+    "keep_running_2": [
+      { 
+        "page": "poo",
+        "intro": "Will you make it?"
+      }
+    ],
+    "poo": [],
+    "triangles": [
+      { 
+        "page": "foolish",
+        "intro": "A"
+      },
+      { 
+        "page": "foolish",
+        "intro": "B"
+      },
+      { 
+        "page": "glee_box",
+        "intro": "C"
+      }
+    ],
+    "foolish": [],
+    "glee_box": [
+      { 
+        "page": "winner",
+        "intro": "You turn the key."
+      }
+    ],
+    "winner": []
+  }
+}
+    
+    
+  
+
